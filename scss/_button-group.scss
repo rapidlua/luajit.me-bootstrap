@@ -60,6 +60,7 @@
 
 .btn-group-sm > .btn { @extend .btn-sm; }
 .btn-group-lg > .btn { @extend .btn-lg; }
+.btn-group-cp-size > .btn { @extend .btn-cp-size; }
 
 
 //
@@ -89,6 +90,11 @@
 .btn-lg + .dropdown-toggle-split {
   padding-right: $btn-padding-x-lg * .75;
   padding-left: $btn-padding-x-lg * .75;
+}
+
+.btn-cp-size + .dropdown-toggle-split {
+  padding-right: $btn-padding-x-cp-size * .75;
+  padding-left: $btn-padding-x-cp-size * .75;
 }
 
 

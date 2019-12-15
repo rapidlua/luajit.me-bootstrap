@@ -81,12 +81,8 @@ $theme-colors: map-merge(
   (
     "primary":    $primary,
     "secondary":  $secondary,
-    "success":    $success,
-    "info":       $info,
     "warning":    $warning,
     "danger":     $danger,
-    "light":      $light,
-    "dark":       $dark
   ),
   $theme-colors
 );
@@ -113,11 +109,11 @@ $enable-gradients:                            false !default;
 $enable-transitions:                          true !default;
 $enable-prefers-reduced-motion-media-query:   true !default;
 $enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
-$enable-grid-classes:                         true !default;
+$enable-grid-classes:                         false !default;
 $enable-pointer-cursor-for-buttons:           true !default;
-$enable-print-styles:                         true !default;
+$enable-print-styles:                         false !default;
 $enable-responsive-font-sizes:                false !default;
-$enable-validation-icons:                     true !default;
+$enable-validation-icons:                     false !default;
 $enable-deprecation-messages:                 true !default;
 
 
@@ -189,15 +185,10 @@ $paragraph-margin-bottom:   1rem !default;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
 ) !default;
 
-@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
-@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+//@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+//@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
 
 // Grid containers
@@ -205,10 +196,6 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -218,7 +205,7 @@ $container-max-widths: (
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns:                12 !default;
+$grid-columns:                1 !default;
 $grid-gutter-width:           30px !default;
 
 
@@ -235,6 +222,7 @@ $border-color:                $gray-300 !default;
 $border-radius:               .25rem !default;
 $border-radius-lg:            .3rem !default;
 $border-radius-sm:            .2rem !default;
+$border-radius-cp-size:       2px !default;
 
 $rounded-pill:                50rem !default;
 
@@ -423,6 +411,12 @@ $btn-padding-x-lg:            $input-btn-padding-x-lg !default;
 $btn-font-size-lg:            $input-btn-font-size-lg !default;
 $btn-line-height-lg:          $input-btn-line-height-lg !default;
 
+$btn-padding-y-cp-size:       5px;
+$btn-padding-x-cp-size:       9px;
+$btn-font-size-cp-size:       15px;
+$btn-line-height-cp-size:     1;
+
+
 $btn-border-width:            $input-btn-border-width !default;
 
 $btn-font-weight:             $font-weight-normal !default;
@@ -440,6 +434,7 @@ $btn-block-spacing-y:         .5rem !default;
 $btn-border-radius:           $border-radius !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
+$btn-border-radius-cp-size:   $border-radius-cp-size !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 

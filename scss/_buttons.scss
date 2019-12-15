@@ -62,11 +62,11 @@ fieldset:disabled a.btn {
   }
 }
 
-@each $color, $value in $theme-colors {
-  .btn-outline-#{$color} {
-    @include button-outline-variant($value);
-  }
-}
+//@each $color, $value in $theme-colors {
+//  .btn-outline-#{$color} {
+//    @include button-outline-variant($value);
+//  }
+//}
 
 
 //
@@ -99,6 +99,26 @@ fieldset:disabled a.btn {
   // No need for an active state here
 }
 
+.btn-cp-color {
+  font-weight: $font-weight-normal;
+  color: #a0a0a0;
+
+  @include hover() {
+    color: #f0f0f0;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: none;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: #f0f0f0;
+  }
+}
+
 
 //
 // Button Sizes
@@ -110,6 +130,10 @@ fieldset:disabled a.btn {
 
 .btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+.btn-cp-size {
+  @include button-size($btn-padding-y-cp-size, $btn-padding-x-cp-size, $btn-font-size-cp-size, $btn-line-height-cp-size, $btn-border-radius-cp-size);
 }
 
 
